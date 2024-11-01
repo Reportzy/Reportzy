@@ -1,0 +1,444 @@
+local p = game.Players.LocalPlayer
+local g = p.PlayerGui
+local h = g:FindFirstChild("Hotbar")
+local b = h:FindFirstChild("Backpack")
+local f = b:FindFirstChild("Hotbar")
+local btn1 = f:FindFirstChild("1").Base
+btn1.ToolName.Text = "GET OUT!!!" -- 1st move
+
+local btn2 = f:FindFirstChild("2").Base
+btn2.ToolName.Text = "Im built like this guy btw" -- 2nd move
+
+local btn3 = f:FindFirstChild("3").Base
+btn3.ToolName.Text = "My hand can barely hold a food" --3rd move
+
+local btn4 = f:FindFirstChild("4").Base
+btn4.ToolName.Text = "SUMO UPPER SLAP!!" --4th move
+
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+
+local playerGui = player:WaitForChild("PlayerGui")
+
+local function findGuiAndSetText()
+    local screenGui = playerGui:FindFirstChild("ScreenGui")
+    if screenGui then
+        local magicHealthFrame = screenGui:FindFirstChild("MagicHealth")
+        if magicHealthFrame then
+            local textLabel = magicHealthFrame:FindFirstChild("TextLabel")
+            local bar = magicHealthFrame.Health:FindFirstChild("Bar").Bar
+            if textLabel and bar then
+                textLabel.Text = "I AM NOT BUILT LIKE A FERRIS WHEEL"
+                bar.ImageColor3 = Color3.fromRGB(0, 255, 255)
+            end
+        end
+    end
+end
+
+playerGui.DescendantAdded:Connect(findGuiAndSetText)
+findGuiAndSetText()
+
+--1ST MOVE
+local animationId = 10468665991
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+local player = game.Players.LocalPlayer
+local humanoid = player.Character.Humanoid
+
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://18903642853"
+
+local playAnim = humanoid:LoadAnimation(anim)
+playAnim:Play()
+playAnim.TimePosition = 2.5
+playAnim:AdjustSpeed(2)
+
+task.wait(0.2)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17573042535"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 10
+soundeffect.TimePosition = 0
+task.wait(.5)
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local EmitBatch2 = ReplicatedStorage.Resources.KJEffects["fine...Emit"].EmitBatch2:Clone()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+EmitBatch2.Parent = character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(EmitBatch2:GetChildren()) do
+	if child:IsA("ParticleEmitter") then
+		child:Emit(14)
+	end
+end
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local EmitBatch2 = ReplicatedStorage.Resources.Fang.InchGo["GoodSmoke3"].R:Clone()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+EmitBatch2.Parent = character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(EmitBatch2:GetChildren()) do
+	if child:IsA("ParticleEmitter") then
+		child:Emit(260)
+	end
+end
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local EmitBatch2 = ReplicatedStorage.Resources.Fang.InchGo["GoodSmoke3"].L:Clone()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+EmitBatch2.Parent = character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(EmitBatch2:GetChildren()) do
+	if child:IsA("ParticleEmitter") then
+		child:Emit(260)
+	end
+end
+
+
+-- MORE SCRIPT IF YOU WANT IF DONT REMOVE ME
+
+    end
+
+end
+
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+--2ND MOVE
+local animationId = 10466974800
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://18896229321"
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+Anim:Play()
+
+Anim:AdjustSpeed(0)
+
+Anim.TimePosition = .5
+
+Anim:AdjustSpeed(1.8)
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local EmitBatch2 = ReplicatedStorage.Resources.SplitCounter.TPNEW["TP"].Attachment:Clone()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+EmitBatch2.Parent = character:WaitForChild("HumanoidRootPart")
+for i = 1, 13 do
+    task.wait(.1)
+for _, child in ipairs(EmitBatch2:GetChildren()) do
+	if child:IsA("ParticleEmitter") then
+		child:Emit(15)
+	end
+end
+end
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://8406997653"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 3
+    task.wait(1.5)
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local EmitBatch2 = ReplicatedStorage.Resources.KJEffects["fine...Emit"].EmitBatch2:Clone()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+EmitBatch2.Parent = character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(EmitBatch2:GetChildren()) do
+	if child:IsA("ParticleEmitter") then
+		child:Emit(14)
+	end
+end
+    Anim:Stop()
+    end
+
+end
+
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+--3RD MOVE
+local animationId = 10471336737
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://16699717165"
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+Anim:Play()
+
+Anim:AdjustSpeed(0)
+
+Anim.TimePosition = 3.4
+
+Anim:AdjustSpeed(1)
+
+task.wait(.4)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://12222058"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 6
+soundeffect.TimePosition = 0
+
+task.wait(.09)
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local EmitBatch2 = ReplicatedStorage.Resources.Fang.GoodWind2["Part"].Attachment:Clone()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+EmitBatch2.Parent = character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(EmitBatch2:GetChildren()) do
+	if child:IsA("ParticleEmitter") then
+		child:Emit(5)
+	end
+end
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local EmitBatch2 = ReplicatedStorage.Resources.Fang.General["General"].Attachment:Clone()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+EmitBatch2.Parent = character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(EmitBatch2:GetChildren()) do
+	if child:IsA("ParticleEmitter") then
+		child:Emit(30)
+	end
+end
+
+
+-- MORE SCRIPT HERE
+
+    end
+
+end
+
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+--4TH MOVE
+local animationId = 12510170988
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://14900168720"
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+Anim:Play()
+
+Anim:AdjustSpeed(0)
+
+Anim.TimePosition = 1.5
+
+Anim:AdjustSpeed(0.5)
+
+task.wait(0.5)
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local EmitBatch2 = ReplicatedStorage.Resources.Fang.RockExplode["GoodSmoke3"].emit:Clone()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+EmitBatch2.Parent = character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(EmitBatch2:GetChildren()) do
+	if child:IsA("ParticleEmitter") then
+		child:Emit(4)
+	end
+end
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local EmitBatch2 = ReplicatedStorage.Resources.Fang.RockExplode["GoodSmoke3"].Attachment:Clone()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+EmitBatch2.Parent = character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(EmitBatch2:GetChildren()) do
+	if child:IsA("ParticleEmitter") then
+		child:Emit(4)
+	end
+end
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local EmitBatch2 = ReplicatedStorage.Resources.Fang.RockExplode["GoodSmoke3"].smoke:Clone()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+EmitBatch2.Parent = character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(EmitBatch2:GetChildren()) do
+	if child:IsA("ParticleEmitter") then
+		child:Emit(4)
+	end
+end
+
+-- SCRIPT HERE
+
+
+    end
+
+end
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+
+local function onBodyVelocityAdded(bodyVelocity)
+
+    if bodyVelocity:IsA("BodyVelocity") then
+
+        bodyVelocity.Velocity = Vector3.new(bodyVelocity.Velocity.X, 0, bodyVelocity.Velocity.Z)
+
+    end
+
+end
+
+
+character.DescendantAdded:Connect(onBodyVelocityAdded)
+
+
+for _, descendant in pairs(character:GetDescendants()) do
+
+    onBodyVelocityAdded(descendant)
+
+end
+
+
+player.CharacterAdded:Connect(function(newCharacter)
+
+    character = newCharacter
+
+    humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+    character.DescendantAdded:Connect(onBodyVelocityAdded)
+
+   
+
+    for _, descendant in pairs(character:GetDescendants()) do
+
+        onBodyVelocityAdded(descendant)
+
+    end
+  
+
+end)g

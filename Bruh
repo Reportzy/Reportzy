@@ -426,7 +426,7 @@ end
 
 player.CharacterAdded:Connect(function(newCharacter)
 
-    character = newCharacter
+    character = "super hueman"
 
     humanoidRootPart = character:WaitForChild("HumanoidRootPart")
 

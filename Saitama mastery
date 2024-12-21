@@ -1,0 +1,153 @@
+-- Function to handle animation detection and replacement
+local function handleAnimationDetection(animIdsToStop, replacementAnimId, animSpeed)
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:WaitForChild("Humanoid")
+
+    local function onAnimPlayed(animationTrack)
+        local animId = tonumber(string.match(animationTrack.Animation.AnimationId, "%d+"))
+        
+        for _, stopId in ipairs(animIdsToStop) do
+            if animId == stopId then
+                animationTrack:Stop()
+                local replacementAnimation = Instance.new("Animation")
+                replacementAnimation.AnimationId = "rbxassetid://" .. replacementAnimId
+                local replacementTrack = humanoid:LoadAnimation(replacementAnimation)
+                replacementTrack:Play()
+                replacementTrack:AdjustSpeed(animSpeed) -- Adjust the speed of the replacement animation
+                break
+            end
+        end
+    end
+    
+    humanoid.AnimationPlayed:Connect(onAnimPlayed)
+end
+
+-- First set of animations
+local firstAnimIdsToStop = {10468665991}
+local firstReplacementAnimId = 18896127525
+local firstAnimspeed = 1.7
+handleAnimationDetection(firstAnimIdsToStop, firstReplacementAnimId, firstAnimspeed)
+
+-- Second set of animations
+local secondAnimIdsToStop = {10466974800}
+local secondReplacementAnimId = 12273188754
+local secondAnimspeed = 1
+handleAnimationDetection(secondAnimIdsToStop, secondReplacementAnimId, secondAnimspeed)
+
+-- Third set of animations
+local thirdAnimIdsToStop = {10471336737}
+local thirdReplacementAnimId = 13501296372
+local thirdAnimspeed = 0.8
+handleAnimationDetection(thirdAnimIdsToStop, thirdReplacementAnimId, thirdAnimspeed)
+
+-- Third set of animations
+local thirdAnimIdsToStop = {12510170988}
+local thirdReplacementAnimId = 18179181663
+local thirdAnimspeed = 1
+handleAnimationDetection(thirdAnimIdsToStop, thirdReplacementAnimId, thirdAnimspeed)
+
+--Third set of animations
+local thirdAnimIdsToStop = {15955393872}
+local thirdReplacementAnimId = 15943915877
+local thirdAnimspeed = 1
+handleAnimationDetection(thirdAnimIdsToStop, thirdReplacementAnimId, thirdAnimspeed)
+
+--Third set of animations u
+local thirdAnimIdsToStop = {12447707844}
+local thirdReplacementAnimId = 17464923657
+local thirdAnimspeed = 1
+handleAnimationDetection(thirdAnimIdsToStop, thirdReplacementAnimId, thirdAnimspeed)
+
+--Third set of animations
+local thirdAnimIdsToStop = {11343318134}
+local thirdReplacementAnimId = 12273188754
+local thirdAnimspeed = 0.2
+handleAnimationDetection(thirdAnimIdsToStop, thirdReplacementAnimId, thirdAnimspeed)
+
+--Third set of animations
+local thirdAnimIdsToStop = {11365563255}
+local thirdReplacementAnimId = 18897120868
+local thirdAnimspeed = 0.3
+handleAnimationDetection(thirdAnimIdsToStop, thirdReplacementAnimId, thirdAnimspeed)
+
+--Third set of animations
+local thirdAnimIdsToStop = {12983333733}
+local thirdReplacementAnimId = 13294790250
+local thirdAnimspeed = 0.20
+handleAnimationDetection(thirdAnimIdsToStop, thirdReplacementAnimId, thirdAnimspeed)
+
+--Third set of animations
+local thirdAnimIdsToStop = {10479335397}
+local thirdReplacementAnimId = 17838006839
+local thirdAnimspeed = 1
+handleAnimationDetection(thirdAnimIdsToStop, thirdReplacementAnimId, thirdAnimspeed)
+local player = game.Players.LocalPlayer
+
+local playerGui = player.PlayerGui
+
+local hotbar = playerGui:FindFirstChild("Hotbar")
+
+local backpack = hotbar:FindFirstChild("Backpack")
+
+local hotbarFrame = backpack:FindFirstChild("Hotbar")
+
+local baseButton = hotbarFrame:FindFirstChild("1").Base
+
+local ToolName = baseButton.ToolName
+
+
+ToolName.Text = "Mighty Punch"
+
+local player = game.Players.LocalPlayer
+
+local playerGui = player.PlayerGui
+
+local hotbar = playerGui:FindFirstChild("Hotbar")
+
+local backpack = hotbar:FindFirstChild("Backpack")
+
+local hotbarFrame = backpack:FindFirstChild("Hotbar")
+
+local baseButton = hotbarFrame:FindFirstChild("2").Base
+
+local ToolName = baseButton.ToolName
+
+
+ToolName.Text = "Rising Fists"
+
+local player = game.Players.LocalPlayer
+
+local playerGui = player.PlayerGui
+
+local hotbar = playerGui:FindFirstChild("Hotbar")
+
+local backpack = hotbar:FindFirstChild("Backpack")
+
+local hotbarFrame = backpack:FindFirstChild("Hotbar")
+
+local baseButton = hotbarFrame:FindFirstChild("3").Base
+
+local ToolName = baseButton.ToolName
+
+
+ToolName.Text = "Normal Kick"
+
+local player = game.Players.LocalPlayer
+
+local playerGui = player.PlayerGui
+
+local hotbar = playerGui:FindFirstChild("Hotbar")
+
+local backpack = hotbar:FindFirstChild("Backpack")
+
+local hotbarFrame = backpack:FindFirstChild("Hotbar")
+
+local baseButton = hotbarFrame:FindFirstChild("4").Base
+
+local ToolName = baseButton.ToolName
+
+
+ToolName.Text = "Uprising Kick"
+
+

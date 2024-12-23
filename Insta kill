@@ -1,0 +1,36 @@
+local UserInputService = game:GetService("UserInputService")
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+-- Target coordinates
+local targetPosition = Vector3.new(42864, 32261, -19874)
+
+-- Store the original position
+local originalPosition = humanoidRootPart.Position
+
+-- Function to teleport
+local function teleport()
+    -- Wait some time before teleporting (change 2 to your desired wait time)
+    local wait_time_before_teleport = 0.5 -- time in seconds
+    wait(wait_time_before_teleport)
+
+    humanoidRootPart.CFrame = CFrame.new(targetPosition)
+
+    local wait_time_before_return = 0.5 -- time in seconds
+    wait(wait_time_before_return)
+
+    humanoidRootPart.CFrame = CFrame.new(originalPosition)
+end
+
+-- Function to handle input
+local function onInput(input, gameProcessed)
+    if gameProcessed then return end -- Prevents running the script if the input is handled by the game
+
+    if input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.One then
+        teleport()
+    end
+end
+
+-- Connect the input function
+UserInputService.InputBegan:Connect(onInput)
